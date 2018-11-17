@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import '../styles/App.scss';
+import '../styles/normalize.css';
+import Header from './Header.js';
+import ContactForm from './ContactForm.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      page: 'home'
+    }
+  }
+
+  updatePage = (pageName) => {
+    this.setState({
+      page: pageName
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    switch (this.state.page) {
+      case 'home':
+        return (
+          <div className="App">
+            <Header updatePage={this.updatePage} />
+            <p>Welcome! my name is mike and i enjoy solving problems and telling stories with interesting websites.</p>
+          </div>
+        )
+      case 'contact':
+        return (
+          <div className="App">
+            <Header />
+            <ContactForm />
+          </div>
+        )
+    }
   }
 }
 

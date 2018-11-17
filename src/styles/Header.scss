@@ -1,0 +1,43 @@
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-links {
+  height: 25px;
+  width: 200px;
+  font-size: 20px;
+  position: relative;
+  background: none;
+  display: inline-block;
+  transition: color 0.2s ease-out;
+  z-index: 1;
+}
+
+.nav-links:hover {
+  color: white;
+}
+
+.nav-links::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1%;
+  height: 100%;
+  background: gray;
+  transition: width 0.2s ease-out;
+  z-index: -1;
+}
+
+.nav-links:hover::before {
+  width: 100%;
+}
