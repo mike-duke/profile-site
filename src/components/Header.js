@@ -12,7 +12,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      // <header>
+      <header>
         <div className="links">
           <p onClick={this.navigateToPage} className="nav-links">home</p>
           <p onClick={this.navigateToPage} className="nav-links">story</p>
@@ -20,7 +20,7 @@ export default class Header extends Component {
           {/* <p onClick={this.navigateToPage} className="nav-links">writing</p> */}
           <p onClick={this.navigateToPage} className="nav-links">contact</p>
         </div>
-      // </header>
+      </header>
     )
   }
 }

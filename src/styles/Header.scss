@@ -1,25 +1,28 @@
 header {
   height: 100px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .links {
-  width: 100%;
+  width: 92%;
   display: flex;
   justify-content: space-around;
+  border-right: 3px solid black;
+  z-index: 1;
 }
 
 .nav-links {
   height: 25px;
-  width: 200px;
-  font-size: 20px;
+  width: 25%;
   position: relative;
   background: none;
   display: inline-block;
   transition: color 0.2s ease-out;
   z-index: 1;
+  overflow: hidden;
 }
 
 .nav-links:hover {
@@ -31,9 +34,9 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1%;
+  width: 3px;
   height: 100%;
-  background: gray;
+  background: black;
   transition: width 0.2s ease-out;
   z-index: -1;
 }
