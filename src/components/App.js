@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import '../styles/App.scss';
 import '../styles/normalize.css';
 import Header from './Header.js';
-import ContactForm from './ContactForm.js';
+// import ContactForm from './ContactForm.js';
 
 class App extends Component {
   constructor() {
@@ -21,32 +20,31 @@ class App extends Component {
   }
 
   render() {
-    switch (this.state.page) {
-      case 'home':
-        return (
-          <div className="App">
-            <Header updatePage={this.updatePage} />
-            <div className="home-text">
-              <p className="fade-in" ref={this.fadeIn}>FADE IN:</p>
-              <p></p>
-              <p className="logline">INT. <a href="#" onClick={console.log('your text here')}>HOME</a> - NOW</p>
-              <p className="scene-description-1">MIKE DUKE - late 30s, unconventionally handsome, software developer - stands and addresses the audience.</p>
-            
-              <div className="dialog-text">
-                <p className="character-name">MIKE DUKE</p>
-                <p>Welcome! My name is Mike and I'm excited about creating websites that solve interesting problems and tell interesting stories. If you'd like to know more about me, please check out <a href="#" onClick={console.log('to scroll?')}>my story</a></p>
-              </div>
-            </div>
+    return (
+      <div className="App" id="home">
+        <Header updatePage={this.updatePage} />
+        <section className="home-text">
+          <p className="fade-in" ref={this.fadeIn}>FADE IN:</p>
+          <p className="logline">INT. <a href="#home" onClick={console.log('your text here')}>HOME</a> - NOW</p>
+          <p className="scene-description-1">
+            <span className="name">MIKE DUKE: </span>
+            <span className="age">late 30s, </span> 
+            <span className="physical-description">unconventionally handsome, </span>
+            <span className="temperment">writer and software developer--</span>
+            <span className="action">stands and addresses the audience.</span>
+          </p>
+        
+          <div className="dialog-container">
+            <p className="character-name">MIKE DUKE</p>
+            <p className="dialog">
+              {`Welcome! 
+              My name is Mike and I love telling stories, whether through fiction or through interesting and exciting software. If you'd like to know more about me, please check out `}
+              <a href="#story">my story</a> or <a href="#projects">my projects</a>
+            </p>
           </div>
-        )
-      case 'contact':
-        return (
-          <div className="App">
-            <Header />
-            <ContactForm />
-          </div>
-        )
-    }
+        </section>
+      </div>
+    )
   }
 }
 
